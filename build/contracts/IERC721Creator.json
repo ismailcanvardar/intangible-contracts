@@ -1,0 +1,361 @@
+{
+  "contractName": "IERC721Creator",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenCreator",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenCreator\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"tokenCreator(uint256)\":{\"details\":\"Gets the creator of the token\",\"params\":{\"_tokenId\":\"uint256 ID of the token\"},\"returns\":{\"_0\":\"address of the creator\"}}},\"title\":\"IERC721 Non-Fungible Token Creator basic interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721Creator.sol\":\"IERC721Creator\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721Creator.sol\":{\"keccak256\":\"0x94728414061928f6656d74b348c331e44d985a05988d3c5798d1df6ee41d901b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a29832f74a224c807f4732fed7f5dabc6eeab4feca613c3900e16fba800f1d38\",\"dweb:/ipfs/QmeDvQ8zh4GmMeMnaxCFZ7BGi3ukYXSdBEiGhWGLWp8zma\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.6.12;\n\n/**\n * @title IERC721 Non-Fungible Token Creator basic interface\n */\ninterface IERC721Creator {\n    /**\n     * @dev Gets the creator of the token\n     * @param _tokenId uint256 ID of the token\n     * @return address of the creator\n     */\n    function tokenCreator(uint256 _tokenId)\n        external\n        view\n        returns (address payable);\n}\n",
+  "sourcePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721Creator.sol",
+  "ast": {
+    "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721Creator.sol",
+    "exportedSymbols": {
+      "IERC721Creator": [
+        11
+      ]
+    },
+    "id": 12,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2,
+          "nodeType": "StructuredDocumentation",
+          "src": "57:68:0",
+          "text": " @title IERC721 Non-Fungible Token Creator basic interface"
+        },
+        "fullyImplemented": false,
+        "id": 11,
+        "linearizedBaseContracts": [
+          11
+        ],
+        "name": "IERC721Creator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 3,
+              "nodeType": "StructuredDocumentation",
+              "src": "157:138:0",
+              "text": " @dev Gets the creator of the token\n @param _tokenId uint256 ID of the token\n @return address of the creator"
+            },
+            "functionSelector": "40c1a064",
+            "id": 10,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenCreator",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10,
+                  "src": "322:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:18:0"
+            },
+            "returnParameters": {
+              "id": 9,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10,
+                  "src": "387:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 7,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "387:15:0",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "386:17:0"
+            },
+            "scope": 11,
+            "src": "300:104:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12,
+        "src": "126:280:0"
+      }
+    ],
+    "src": "32:375:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721Creator.sol",
+      "exportedSymbols": {
+        "IERC721Creator": [
+          11
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "32:23:0"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            11
+          ],
+          "name": "IERC721Creator",
+          "scope": 12
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @title IERC721 Non-Fungible Token Creator basic interface"
+            },
+            "id": 2,
+            "name": "StructuredDocumentation",
+            "src": "57:68:0"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "40c1a064",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "tokenCreator",
+              "overrides": null,
+              "scope": 11,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Gets the creator of the token\n @param _tokenId uint256 ID of the token\n @return address of the creator"
+                },
+                "id": 3,
+                "name": "StructuredDocumentation",
+                "src": "157:138:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_tokenId",
+                      "overrides": null,
+                      "scope": 10,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4,
+                        "name": "ElementaryTypeName",
+                        "src": "322:7:0"
+                      }
+                    ],
+                    "id": 5,
+                    "name": "VariableDeclaration",
+                    "src": "322:16:0"
+                  }
+                ],
+                "id": 6,
+                "name": "ParameterList",
+                "src": "321:18:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 10,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address payable",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "payable",
+                          "type": "address payable"
+                        },
+                        "id": 7,
+                        "name": "ElementaryTypeName",
+                        "src": "387:15:0"
+                      }
+                    ],
+                    "id": 8,
+                    "name": "VariableDeclaration",
+                    "src": "387:15:0"
+                  }
+                ],
+                "id": 9,
+                "name": "ParameterList",
+                "src": "386:17:0"
+              }
+            ],
+            "id": 10,
+            "name": "FunctionDefinition",
+            "src": "300:104:0"
+          }
+        ],
+        "id": 11,
+        "name": "ContractDefinition",
+        "src": "126:280:0"
+      }
+    ],
+    "id": 12,
+    "name": "SourceUnit",
+    "src": "32:375:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-03-13T15:15:39.694Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "tokenCreator(uint256)": {
+        "details": "Gets the creator of the token",
+        "params": {
+          "_tokenId": "uint256 ID of the token"
+        },
+        "returns": {
+          "_0": "address of the creator"
+        }
+      }
+    },
+    "title": "IERC721 Non-Fungible Token Creator basic interface",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

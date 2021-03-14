@@ -1,0 +1,1413 @@
+{
+  "contractName": "MaybeSendValue",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/MaybeSendValue.sol\":\"MaybeSendValue\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/ISendValueProxy.sol\":{\"keccak256\":\"0xae7bd17d8d36b5bcb07abc52fd4c87f04a6ae3abe4a4f6fdc5c9512828b0afd0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9535cb47c2b6525c32a1b90af87d2e9a5089b4d7bacff233c73ecc03b158b4d7\",\"dweb:/ipfs/QmRsP3WCshPXYy3Af2B3EtMtApmw5xbDea2sFAEmjW99Gz\"]},\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/MaybeSendValue.sol\":{\"keccak256\":\"0x704fb916d9d4cac6d71075cf5607c628082530d7e862665d57ffbcc82fa4f153\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://60c7982516f7512c9420914712c2912f0e1aa8bfd5cb1bd8252fcdf437701c97\",\"dweb:/ipfs/QmRgRNG8VhZFSCYKT3YoYNcRBW67rnwLh95nDkc54WXiK5\"]},\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/SendValueProxy.sol\":{\"keccak256\":\"0x73de66ed3163075f563d7edec3a071e375ddac41d1ba6e19fd0daee5fea9a9de\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b274fb588ee72bccf15970bcb851f6718f629c6056bbd2aed2b52765d58d3668\",\"dweb:/ipfs/QmYJsYufWEc9yCm1Wtex1eMnb56ZzcmejxKaERDw6MHrDQ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.6.12;\n\nimport \"./SendValueProxy.sol\";\n\n/**\n * @dev Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds.\n */\ncontract MaybeSendValue {\n    SendValueProxy proxy;\n\n    constructor() internal {\n        proxy = new SendValueProxy();\n    }\n\n    /**\n     * @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n     * @param _to address to send some value to.\n     * @param _value uint256 amount to send.\n     */\n    function maybeSendValue(address payable _to, uint256 _value)\n        internal\n        returns (bool)\n    {\n        // Call sendValue on the proxy contract and forward the mesg.value.\n        /* solium-disable-next-line */\n        (bool success, bytes memory _) = address(proxy).call.value(_value)(\n            abi.encodeWithSignature(\"sendValue(address)\", _to)\n        );\n        return success;\n    }\n}\n",
+  "sourcePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/MaybeSendValue.sol",
+  "ast": {
+    "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/MaybeSendValue.sol",
+    "exportedSymbols": {
+      "MaybeSendValue": [
+        719
+      ]
+    },
+    "id": 720,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 672,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:8"
+      },
+      {
+        "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/SendValueProxy.sol",
+        "file": "./SendValueProxy.sol",
+        "id": 673,
+        "nodeType": "ImportDirective",
+        "scope": 720,
+        "sourceUnit": 1127,
+        "src": "57:30:8",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [
+          1126
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 674,
+          "nodeType": "StructuredDocumentation",
+          "src": "89:106:8",
+          "text": " @dev Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds."
+        },
+        "fullyImplemented": true,
+        "id": 719,
+        "linearizedBaseContracts": [
+          719
+        ],
+        "name": "MaybeSendValue",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 676,
+            "mutability": "mutable",
+            "name": "proxy",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 719,
+            "src": "226:20:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+              "typeString": "contract SendValueProxy"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 675,
+              "name": "SendValueProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1126,
+              "src": "226:14:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                "typeString": "contract SendValueProxy"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 685,
+              "nodeType": "Block",
+              "src": "276:45:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 683,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 679,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 676,
+                      "src": "286:5:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                        "typeString": "contract SendValueProxy"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 681,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "294:18:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_SendValueProxy_$1126_$",
+                          "typeString": "function () returns (contract SendValueProxy)"
+                        },
+                        "typeName": {
+                          "contractScope": null,
+                          "id": 680,
+                          "name": "SendValueProxy",
+                          "nodeType": "UserDefinedTypeName",
+                          "referencedDeclaration": 1126,
+                          "src": "298:14:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                            "typeString": "contract SendValueProxy"
+                          }
+                        }
+                      },
+                      "id": 682,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "294:20:8",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                        "typeString": "contract SendValueProxy"
+                      }
+                    },
+                    "src": "286:28:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                      "typeString": "contract SendValueProxy"
+                    }
+                  },
+                  "id": 684,
+                  "nodeType": "ExpressionStatement",
+                  "src": "286:28:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 686,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 677,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "264:2:8"
+            },
+            "returnParameters": {
+              "id": 678,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "276:0:8"
+            },
+            "scope": 719,
+            "src": "253:68:8",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 717,
+              "nodeType": "Block",
+              "src": "655:296:8",
+              "statements": [
+                {
+                  "assignments": [
+                    697,
+                    699
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 697,
+                      "mutability": "mutable",
+                      "name": "success",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 717,
+                      "src": "781:12:8",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "typeName": {
+                        "id": 696,
+                        "name": "bool",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "781:4:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 699,
+                      "mutability": "mutable",
+                      "name": "_",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 717,
+                      "src": "795:14:8",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_memory_ptr",
+                        "typeString": "bytes"
+                      },
+                      "typeName": {
+                        "id": 698,
+                        "name": "bytes",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "795:5:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_storage_ptr",
+                          "typeString": "bytes"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 714,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "73656e6456616c7565286164647265737329",
+                            "id": 710,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "884:20:8",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_7d286e4816088d7bc013a89c2d7078cdba8a91b5bdcb06fe7888e7741d12d62f",
+                              "typeString": "literal_string \"sendValue(address)\""
+                            },
+                            "value": "sendValue(address)"
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 711,
+                            "name": "_to",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 689,
+                            "src": "906:3:8",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_stringliteral_7d286e4816088d7bc013a89c2d7078cdba8a91b5bdcb06fe7888e7741d12d62f",
+                              "typeString": "literal_string \"sendValue(address)\""
+                            },
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 708,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -1,
+                            "src": "860:3:8",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 709,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encodeWithSignature",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "860:23:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodewithsignature_pure$_t_string_memory_ptr_$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function (string memory) pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 712,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "860:50:8",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 706,
+                          "name": "_value",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 691,
+                          "src": "839:6:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 702,
+                                "name": "proxy",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 676,
+                                "src": "821:5:8",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                                  "typeString": "contract SendValueProxy"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                                  "typeString": "contract SendValueProxy"
+                                }
+                              ],
+                              "id": 701,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "813:7:8",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_address_$",
+                                "typeString": "type(address)"
+                              },
+                              "typeName": {
+                                "id": 700,
+                                "name": "address",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "813:7:8",
+                                "typeDescriptions": {
+                                  "typeIdentifier": null,
+                                  "typeString": null
+                                }
+                              }
+                            },
+                            "id": 703,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "813:14:8",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "id": 704,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "call",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "813:19:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
+                            "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
+                          }
+                        },
+                        "id": 705,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "813:25:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_setvalue_pure$_t_uint256_$returns$_t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value_$",
+                          "typeString": "function (uint256) pure returns (function (bytes memory) payable returns (bool,bytes memory))"
+                        }
+                      },
+                      "id": 707,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "813:33:8",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value",
+                        "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
+                      }
+                    },
+                    "id": 713,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "813:107:8",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
+                      "typeString": "tuple(bool,bytes memory)"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "780:140:8"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 715,
+                    "name": "success",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 697,
+                    "src": "937:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 695,
+                  "id": 716,
+                  "nodeType": "Return",
+                  "src": "930:14:8"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 687,
+              "nodeType": "StructuredDocumentation",
+              "src": "327:218:8",
+              "text": " @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n @param _to address to send some value to.\n @param _value uint256 amount to send."
+            },
+            "id": 718,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "maybeSendValue",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 692,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 689,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 718,
+                  "src": "574:19:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 688,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "574:15:8",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 691,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 718,
+                  "src": "595:14:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 690,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "595:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "573:37:8"
+            },
+            "returnParameters": {
+              "id": 695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 694,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 718,
+                  "src": "645:4:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 693,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "645:4:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "644:6:8"
+            },
+            "scope": 719,
+            "src": "550:401:8",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 720,
+        "src": "196:757:8"
+      }
+    ],
+    "src": "32:922:8"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/MaybeSendValue.sol",
+      "exportedSymbols": {
+        "MaybeSendValue": [
+          719
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 672,
+        "name": "PragmaDirective",
+        "src": "32:23:8"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1127,
+          "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/SendValueProxy.sol",
+          "file": "./SendValueProxy.sol",
+          "scope": 720,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 673,
+        "name": "ImportDirective",
+        "src": "57:30:8"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            1126
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            719
+          ],
+          "name": "MaybeSendValue",
+          "scope": 720
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @dev Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds."
+            },
+            "id": 674,
+            "name": "StructuredDocumentation",
+            "src": "89:106:8"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "proxy",
+              "overrides": null,
+              "scope": 719,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract SendValueProxy",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SendValueProxy",
+                  "referencedDeclaration": 1126,
+                  "type": "contract SendValueProxy"
+                },
+                "id": 675,
+                "name": "UserDefinedTypeName",
+                "src": "226:14:8"
+              }
+            ],
+            "id": 676,
+            "name": "VariableDeclaration",
+            "src": "226:20:8"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "overrides": null,
+              "scope": 719,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 677,
+                "name": "ParameterList",
+                "src": "264:2:8"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 678,
+                "name": "ParameterList",
+                "src": "276:0:8"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract SendValueProxy"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 676,
+                              "type": "contract SendValueProxy",
+                              "value": "proxy"
+                            },
+                            "id": 679,
+                            "name": "Identifier",
+                            "src": "286:5:8"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract SendValueProxy",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "function () returns (contract SendValueProxy)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "contractScope": null,
+                                      "name": "SendValueProxy",
+                                      "referencedDeclaration": 1126,
+                                      "type": "contract SendValueProxy"
+                                    },
+                                    "id": 680,
+                                    "name": "UserDefinedTypeName",
+                                    "src": "298:14:8"
+                                  }
+                                ],
+                                "id": 681,
+                                "name": "NewExpression",
+                                "src": "294:18:8"
+                              }
+                            ],
+                            "id": 682,
+                            "name": "FunctionCall",
+                            "src": "294:20:8"
+                          }
+                        ],
+                        "id": 683,
+                        "name": "Assignment",
+                        "src": "286:28:8"
+                      }
+                    ],
+                    "id": 684,
+                    "name": "ExpressionStatement",
+                    "src": "286:28:8"
+                  }
+                ],
+                "id": 685,
+                "name": "Block",
+                "src": "276:45:8"
+              }
+            ],
+            "id": 686,
+            "name": "FunctionDefinition",
+            "src": "253:68:8"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "maybeSendValue",
+              "overrides": null,
+              "scope": 719,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n @param _to address to send some value to.\n @param _value uint256 amount to send."
+                },
+                "id": 687,
+                "name": "StructuredDocumentation",
+                "src": "327:218:8"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_to",
+                      "overrides": null,
+                      "scope": 718,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address payable",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "payable",
+                          "type": "address payable"
+                        },
+                        "id": 688,
+                        "name": "ElementaryTypeName",
+                        "src": "574:15:8"
+                      }
+                    ],
+                    "id": 689,
+                    "name": "VariableDeclaration",
+                    "src": "574:19:8"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_value",
+                      "overrides": null,
+                      "scope": 718,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 690,
+                        "name": "ElementaryTypeName",
+                        "src": "595:7:8"
+                      }
+                    ],
+                    "id": 691,
+                    "name": "VariableDeclaration",
+                    "src": "595:14:8"
+                  }
+                ],
+                "id": 692,
+                "name": "ParameterList",
+                "src": "573:37:8"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 718,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 693,
+                        "name": "ElementaryTypeName",
+                        "src": "645:4:8"
+                      }
+                    ],
+                    "id": 694,
+                    "name": "VariableDeclaration",
+                    "src": "645:4:8"
+                  }
+                ],
+                "id": 695,
+                "name": "ParameterList",
+                "src": "644:6:8"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        697,
+                        699
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "success",
+                          "overrides": null,
+                          "scope": 717,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "bool",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bool",
+                              "type": "bool"
+                            },
+                            "id": 696,
+                            "name": "ElementaryTypeName",
+                            "src": "781:4:8"
+                          }
+                        ],
+                        "id": 697,
+                        "name": "VariableDeclaration",
+                        "src": "781:12:8"
+                      },
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "_",
+                          "overrides": null,
+                          "scope": 717,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "bytes",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes",
+                              "type": "bytes"
+                            },
+                            "id": 698,
+                            "name": "ElementaryTypeName",
+                            "src": "795:5:8"
+                          }
+                        ],
+                        "id": 699,
+                        "name": "VariableDeclaration",
+                        "src": "795:14:8"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple(bool,bytes memory)",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes_memory_ptr",
+                                  "typeString": "bytes memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "function (bytes memory) payable returns (bool,bytes memory)",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "value",
+                                  "referencedDeclaration": null,
+                                  "type": "function (uint256) pure returns (function (bytes memory) payable returns (bool,bytes memory))"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "call",
+                                      "referencedDeclaration": null,
+                                      "type": "function (bytes memory) payable returns (bool,bytes memory)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "isStructConstructorCall": false,
+                                          "lValueRequested": false,
+                                          "names": [
+                                            null
+                                          ],
+                                          "tryCall": false,
+                                          "type": "address",
+                                          "type_conversion": true
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": [
+                                                {
+                                                  "typeIdentifier": "t_contract$_SendValueProxy_$1126",
+                                                  "typeString": "contract SendValueProxy"
+                                                }
+                                              ],
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": true,
+                                              "lValueRequested": false,
+                                              "type": "type(address)"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "name": "address",
+                                                  "type": null
+                                                },
+                                                "id": 700,
+                                                "name": "ElementaryTypeName",
+                                                "src": "813:7:8"
+                                              }
+                                            ],
+                                            "id": 701,
+                                            "name": "ElementaryTypeNameExpression",
+                                            "src": "813:7:8"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 676,
+                                              "type": "contract SendValueProxy",
+                                              "value": "proxy"
+                                            },
+                                            "id": 702,
+                                            "name": "Identifier",
+                                            "src": "821:5:8"
+                                          }
+                                        ],
+                                        "id": 703,
+                                        "name": "FunctionCall",
+                                        "src": "813:14:8"
+                                      }
+                                    ],
+                                    "id": 704,
+                                    "name": "MemberAccess",
+                                    "src": "813:19:8"
+                                  }
+                                ],
+                                "id": 705,
+                                "name": "MemberAccess",
+                                "src": "813:25:8"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 691,
+                                  "type": "uint256",
+                                  "value": "_value"
+                                },
+                                "id": 706,
+                                "name": "Identifier",
+                                "src": "839:6:8"
+                              }
+                            ],
+                            "id": 707,
+                            "name": "FunctionCall",
+                            "src": "813:33:8"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "bytes memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_stringliteral_7d286e4816088d7bc013a89c2d7078cdba8a91b5bdcb06fe7888e7741d12d62f",
+                                      "typeString": "literal_string \"sendValue(address)\""
+                                    },
+                                    {
+                                      "typeIdentifier": "t_address_payable",
+                                      "typeString": "address payable"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "encodeWithSignature",
+                                  "referencedDeclaration": null,
+                                  "type": "function (string memory) pure returns (bytes memory)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": -1,
+                                      "type": "abi",
+                                      "value": "abi"
+                                    },
+                                    "id": 708,
+                                    "name": "Identifier",
+                                    "src": "860:3:8"
+                                  }
+                                ],
+                                "id": 709,
+                                "name": "MemberAccess",
+                                "src": "860:23:8"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "73656e6456616c7565286164647265737329",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "string",
+                                  "type": "literal_string \"sendValue(address)\"",
+                                  "value": "sendValue(address)"
+                                },
+                                "id": 710,
+                                "name": "Literal",
+                                "src": "884:20:8"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 689,
+                                  "type": "address payable",
+                                  "value": "_to"
+                                },
+                                "id": 711,
+                                "name": "Identifier",
+                                "src": "906:3:8"
+                              }
+                            ],
+                            "id": 712,
+                            "name": "FunctionCall",
+                            "src": "860:50:8"
+                          }
+                        ],
+                        "id": 713,
+                        "name": "FunctionCall",
+                        "src": "813:107:8"
+                      }
+                    ],
+                    "id": 714,
+                    "name": "VariableDeclarationStatement",
+                    "src": "780:140:8"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 695
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 697,
+                          "type": "bool",
+                          "value": "success"
+                        },
+                        "id": 715,
+                        "name": "Identifier",
+                        "src": "937:7:8"
+                      }
+                    ],
+                    "id": 716,
+                    "name": "Return",
+                    "src": "930:14:8"
+                  }
+                ],
+                "id": 717,
+                "name": "Block",
+                "src": "655:296:8"
+              }
+            ],
+            "id": 718,
+            "name": "FunctionDefinition",
+            "src": "550:401:8"
+          }
+        ],
+        "id": 719,
+        "name": "ContractDefinition",
+        "src": "196:757:8"
+      }
+    ],
+    "id": 720,
+    "name": "SourceUnit",
+    "src": "32:922:8"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-03-13T15:15:39.703Z",
+  "devdoc": {
+    "details": "Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds.",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

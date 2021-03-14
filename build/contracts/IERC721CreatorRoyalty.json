@@ -1,0 +1,871 @@
+{
+  "contractName": "IERC721CreatorRoyalty",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_contractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenCreator",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_contractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getERC721TokenRoyaltyPercentage",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_contractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateRoyaltyFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_contractAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"calculateRoyaltyFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_contractAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"getERC721TokenRoyaltyPercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_contractAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenCreator\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"calculateRoyaltyFee(address,uint256,uint256)\":{\"details\":\"Utililty function to calculate the royalty fee for a token.\",\"params\":{\"_amount\":\"uint256 wei amount.\",\"_contractAddress\":\"address ERC721Contract address.\",\"_tokenId\":\"uint256 token ID.\"},\"returns\":{\"_0\":\"uint256 wei fee.\"}},\"getERC721TokenRoyaltyPercentage(address,uint256)\":{\"details\":\"Get the royalty fee percentage for a specific ERC721 contract.\",\"params\":{\"_contractAddress\":\"address ERC721Contract address.\",\"_tokenId\":\"uint256 token ID.\"},\"returns\":{\"_0\":\"uint8 wei royalty fee.\"}},\"tokenCreator(address,uint256)\":{\"details\":\"Gets the creator of the token\",\"params\":{\"_contractAddress\":\"address of the ERC721 contract\",\"_tokenId\":\"uint256 ID of the token\"},\"returns\":{\"_0\":\"address of the creator\"}}},\"title\":\"IERC721CreatorRoyalty Token level royalty interface.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721CreatorRoyalty.sol\":\"IERC721CreatorRoyalty\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721CreatorRoyalty.sol\":{\"keccak256\":\"0xb83090c400001732ae769cc4d58144aee972ef06667cdca819f2f9427210e8cc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ef4c402c3ba3147480d5b23cdaf0b69b06d1cc0eed3cf17b80f03241bc059045\",\"dweb:/ipfs/QmRbff7L3zfkd9ZtotYfSA2ovmy4wZQRwRroJ2nhJDdVZE\"]},\"/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721TokenCreator.sol\":{\"keccak256\":\"0x3a58e42d6cadc3b2fd90a63fc8173c8f47b564d27ee3a161efeab8efdb88bd0e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dd85cb1402dfd7ec072314c7e5f95b4a84fa2298ea2e8890c76907c8b855cd39\",\"dweb:/ipfs/Qmbsy2EjTBK6LvTHqFftwEMKi3uCn2iUMFmD5t5ccZYhvy\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.6.12;\n\nimport \"./IERC721TokenCreator.sol\";\n\n/**\n * @title IERC721CreatorRoyalty Token level royalty interface.\n */\ninterface IERC721CreatorRoyalty is IERC721TokenCreator {\n    /**\n     * @dev Get the royalty fee percentage for a specific ERC721 contract.\n     * @param _contractAddress address ERC721Contract address.\n     * @param _tokenId uint256 token ID.\n     * @return uint8 wei royalty fee.\n     */\n    function getERC721TokenRoyaltyPercentage(\n        address _contractAddress,\n        uint256 _tokenId\n    ) external view returns (uint8);\n\n    /**\n     * @dev Utililty function to calculate the royalty fee for a token.\n     * @param _contractAddress address ERC721Contract address.\n     * @param _tokenId uint256 token ID.\n     * @param _amount uint256 wei amount.\n     * @return uint256 wei fee.\n     */\n    function calculateRoyaltyFee(\n        address _contractAddress,\n        uint256 _tokenId,\n        uint256 _amount\n    ) external view returns (uint256);\n}\n",
+  "sourcePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721CreatorRoyalty.sol",
+  "ast": {
+    "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721CreatorRoyalty.sol",
+    "exportedSymbols": {
+      "IERC721CreatorRoyalty": [
+        40
+      ]
+    },
+    "id": 41,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:1"
+      },
+      {
+        "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721TokenCreator.sol",
+        "file": "./IERC721TokenCreator.sol",
+        "id": 14,
+        "nodeType": "ImportDirective",
+        "scope": 41,
+        "sourceUnit": 55,
+        "src": "57:35:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16,
+              "name": "IERC721TokenCreator",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 54,
+              "src": "200:19:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC721TokenCreator_$54",
+                "typeString": "contract IERC721TokenCreator"
+              }
+            },
+            "id": 17,
+            "nodeType": "InheritanceSpecifier",
+            "src": "200:19:1"
+          }
+        ],
+        "contractDependencies": [
+          54
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 15,
+          "nodeType": "StructuredDocumentation",
+          "src": "94:70:1",
+          "text": " @title IERC721CreatorRoyalty Token level royalty interface."
+        },
+        "fullyImplemented": false,
+        "id": 40,
+        "linearizedBaseContracts": [
+          40,
+          54
+        ],
+        "name": "IERC721CreatorRoyalty",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 18,
+              "nodeType": "StructuredDocumentation",
+              "src": "226:228:1",
+              "text": " @dev Get the royalty fee percentage for a specific ERC721 contract.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @return uint8 wei royalty fee."
+            },
+            "functionSelector": "7c0329f7",
+            "id": 27,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getERC721TokenRoyaltyPercentage",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20,
+                  "mutability": "mutable",
+                  "name": "_contractAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27,
+                  "src": "509:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "509:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27,
+                  "src": "543:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "499:66:1"
+            },
+            "returnParameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 25,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27,
+                  "src": "589:5:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "588:7:1"
+            },
+            "scope": 40,
+            "src": "459:137:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 28,
+              "nodeType": "StructuredDocumentation",
+              "src": "602:261:1",
+              "text": " @dev Utililty function to calculate the royalty fee for a token.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @param _amount uint256 wei amount.\n @return uint256 wei fee."
+            },
+            "functionSelector": "860110f5",
+            "id": 39,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateRoyaltyFee",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30,
+                  "mutability": "mutable",
+                  "name": "_contractAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 39,
+                  "src": "906:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "906:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 39,
+                  "src": "940:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "940:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 39,
+                  "src": "966:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 33,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "966:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "896:91:1"
+            },
+            "returnParameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 37,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 39,
+                  "src": "1011:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1011:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1010:9:1"
+            },
+            "scope": 40,
+            "src": "868:152:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 41,
+        "src": "165:857:1"
+      }
+    ],
+    "src": "32:991:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721CreatorRoyalty.sol",
+      "exportedSymbols": {
+        "IERC721CreatorRoyalty": [
+          40
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 13,
+        "name": "PragmaDirective",
+        "src": "32:23:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 55,
+          "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/IERC721TokenCreator.sol",
+          "file": "./IERC721TokenCreator.sol",
+          "scope": 41,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 14,
+        "name": "ImportDirective",
+        "src": "57:35:1"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            54
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            40,
+            54
+          ],
+          "name": "IERC721CreatorRoyalty",
+          "scope": 41
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @title IERC721CreatorRoyalty Token level royalty interface."
+            },
+            "id": 15,
+            "name": "StructuredDocumentation",
+            "src": "94:70:1"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IERC721TokenCreator",
+                  "referencedDeclaration": 54,
+                  "type": "contract IERC721TokenCreator"
+                },
+                "id": 16,
+                "name": "UserDefinedTypeName",
+                "src": "200:19:1"
+              }
+            ],
+            "id": 17,
+            "name": "InheritanceSpecifier",
+            "src": "200:19:1"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "7c0329f7",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getERC721TokenRoyaltyPercentage",
+              "overrides": null,
+              "scope": 40,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Get the royalty fee percentage for a specific ERC721 contract.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @return uint8 wei royalty fee."
+                },
+                "id": 18,
+                "name": "StructuredDocumentation",
+                "src": "226:228:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_contractAddress",
+                      "overrides": null,
+                      "scope": 27,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 19,
+                        "name": "ElementaryTypeName",
+                        "src": "509:7:1"
+                      }
+                    ],
+                    "id": 20,
+                    "name": "VariableDeclaration",
+                    "src": "509:24:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_tokenId",
+                      "overrides": null,
+                      "scope": 27,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 21,
+                        "name": "ElementaryTypeName",
+                        "src": "543:7:1"
+                      }
+                    ],
+                    "id": 22,
+                    "name": "VariableDeclaration",
+                    "src": "543:16:1"
+                  }
+                ],
+                "id": 23,
+                "name": "ParameterList",
+                "src": "499:66:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 27,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 24,
+                        "name": "ElementaryTypeName",
+                        "src": "589:5:1"
+                      }
+                    ],
+                    "id": 25,
+                    "name": "VariableDeclaration",
+                    "src": "589:5:1"
+                  }
+                ],
+                "id": 26,
+                "name": "ParameterList",
+                "src": "588:7:1"
+              }
+            ],
+            "id": 27,
+            "name": "FunctionDefinition",
+            "src": "459:137:1"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "860110f5",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "calculateRoyaltyFee",
+              "overrides": null,
+              "scope": 40,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Utililty function to calculate the royalty fee for a token.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @param _amount uint256 wei amount.\n @return uint256 wei fee."
+                },
+                "id": 28,
+                "name": "StructuredDocumentation",
+                "src": "602:261:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_contractAddress",
+                      "overrides": null,
+                      "scope": 39,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 29,
+                        "name": "ElementaryTypeName",
+                        "src": "906:7:1"
+                      }
+                    ],
+                    "id": 30,
+                    "name": "VariableDeclaration",
+                    "src": "906:24:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_tokenId",
+                      "overrides": null,
+                      "scope": 39,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 31,
+                        "name": "ElementaryTypeName",
+                        "src": "940:7:1"
+                      }
+                    ],
+                    "id": 32,
+                    "name": "VariableDeclaration",
+                    "src": "940:16:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_amount",
+                      "overrides": null,
+                      "scope": 39,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 33,
+                        "name": "ElementaryTypeName",
+                        "src": "966:7:1"
+                      }
+                    ],
+                    "id": 34,
+                    "name": "VariableDeclaration",
+                    "src": "966:15:1"
+                  }
+                ],
+                "id": 35,
+                "name": "ParameterList",
+                "src": "896:91:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 39,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 36,
+                        "name": "ElementaryTypeName",
+                        "src": "1011:7:1"
+                      }
+                    ],
+                    "id": 37,
+                    "name": "VariableDeclaration",
+                    "src": "1011:7:1"
+                  }
+                ],
+                "id": 38,
+                "name": "ParameterList",
+                "src": "1010:9:1"
+              }
+            ],
+            "id": 39,
+            "name": "FunctionDefinition",
+            "src": "868:152:1"
+          }
+        ],
+        "id": 40,
+        "name": "ContractDefinition",
+        "src": "165:857:1"
+      }
+    ],
+    "id": 41,
+    "name": "SourceUnit",
+    "src": "32:991:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-03-13T15:15:39.694Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "calculateRoyaltyFee(address,uint256,uint256)": {
+        "details": "Utililty function to calculate the royalty fee for a token.",
+        "params": {
+          "_amount": "uint256 wei amount.",
+          "_contractAddress": "address ERC721Contract address.",
+          "_tokenId": "uint256 token ID."
+        },
+        "returns": {
+          "_0": "uint256 wei fee."
+        }
+      },
+      "getERC721TokenRoyaltyPercentage(address,uint256)": {
+        "details": "Get the royalty fee percentage for a specific ERC721 contract.",
+        "params": {
+          "_contractAddress": "address ERC721Contract address.",
+          "_tokenId": "uint256 token ID."
+        },
+        "returns": {
+          "_0": "uint8 wei royalty fee."
+        }
+      },
+      "tokenCreator(address,uint256)": {
+        "details": "Gets the creator of the token",
+        "params": {
+          "_contractAddress": "address of the ERC721 contract",
+          "_tokenId": "uint256 ID of the token"
+        },
+        "returns": {
+          "_0": "address of the creator"
+        }
+      }
+    },
+    "title": "IERC721CreatorRoyalty Token level royalty interface.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
