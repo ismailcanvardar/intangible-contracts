@@ -8,7 +8,7 @@ import "./IERC721CreatorRoyalty.sol";
 import "./Marketplace/IMarketplaceSettings.sol";
 import "./Payments.sol";
 
-contract SuperRareMarketAuctionV2 is Ownable, Payments {
+contract IntangibleMarketAuctionV2 is Ownable, Payments {
     using SafeMath for uint256;
 
     /////////////////////////////////////////////////////////////////////////

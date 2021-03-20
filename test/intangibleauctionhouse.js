@@ -1,24 +1,24 @@
 const IntangibleNFT = artifacts.require("IntangibleNFT");
 const MarketplaceSettings = artifacts.require("MarketplaceSettings");
 // _iMarketSettings, _iERC721CreatorRoyalty
-const SuperRareAuctionHouse = artifacts.require("SuperRareAuctionHouse");
+const IntangibleAuctionHouse = artifacts.require("IntangibleAuctionHouse");
 // _iERC721CreatorRoyalty
-const SuperRareRoyaltyRegistry = artifacts.require("SuperRareRoyaltyRegistry");
+const IntangibleRoyaltyRegistry = artifacts.require("IntangibleRoyaltyRegistry");
 // _iERC721Creators
-const SuperRareTokenCreatorRegistry = artifacts.require(
-  "SuperRareTokenCreatorRegistry"
+const IntangibleTokenCreatorRegistry = artifacts.require(
+  "IntangibleTokenCreatorRegistry"
 );
 const truffleAssert = require("truffle-assertions");
 
-describe("SuperRareAuctionHouse Contract", function () {
+describe("IntangibleAuctionHouse Contract", function () {
   let owner;
   let artist;
   let collector;
   let intangibleNftInstance;
   let marketplaceSettingsInstance;
-  let superRareTokenCreatorRegistryInstance;
-  let superRareRoyaltyRegisteryInstance;
-  let superRareAuctionHouseInstance;
+  let intangibleTokenCreatorRegistryInstance;
+  let intangibleRoyaltyRegistryInstance;
+  let intangibleAuctionHouseInstance;
   let scheduledAuctionType;
 
   before(async function () {
@@ -27,17 +27,17 @@ describe("SuperRareAuctionHouse Contract", function () {
     marketplaceSettingsInstance = await MarketplaceSettings.new({
       from: owner,
     });
-    superRareTokenCreatorRegistryInstance = await SuperRareTokenCreatorRegistry.new(
+    intangibleTokenCreatorRegistryInstance = await IntangibleTokenCreatorRegistry.new(
       [intangibleNftInstance.address],
       { from: owner }
     );
-    superRareRoyaltyRegisteryInstance = await SuperRareRoyaltyRegistry.new(
-      superRareTokenCreatorRegistryInstance.address,
+    intangibleRoyaltyRegistryInstance = await IntangibleRoyaltyRegistry.new(
+      intangibleTokenCreatorRegistryInstance.address,
       { from: owner }
     );
-    superRareAuctionHouseInstance = await SuperRareAuctionHouse.new(
+    intangibleAuctionHouseInstance = await IntangibleAuctionHouse.new(
       marketplaceSettingsInstance.address,
-      superRareRoyaltyRegisteryInstance.address,
+      intangibleRoyaltyRegistryInstance.address,
       { from: owner }
     );
     await intangibleNftInstance.addToWhitelist(artist, { from: owner });
@@ -57,7 +57,7 @@ describe("SuperRareAuctionHouse Contract", function () {
         from: artist,
       }
     );
-    scheduledAuctionType = await superRareAuctionHouseInstance.SCHEDULED_AUCTION();
+    scheduledAuctionType = await intangibleAuctionHouseInstance.SCHEDULED_AUCTION();
   });
 
   const convertToWei = (amount) => {
@@ -69,7 +69,7 @@ describe("SuperRareAuctionHouse Contract", function () {
   };
 
   const getAuctionDetails = async (address, tokenId) => {
-    return await superRareAuctionHouseInstance.getAuctionDetails(
+    return await intangibleAuctionHouseInstance.getAuctionDetails(
       address,
       tokenId
     );
@@ -77,12 +77,12 @@ describe("SuperRareAuctionHouse Contract", function () {
 
   const setApprovalAndCreateColdieAuction = async () => {
     await intangibleNftInstance.setApprovalForAll(
-      superRareAuctionHouseInstance.address,
+      intangibleAuctionHouseInstance.address,
       true,
       { from: artist }
     );
 
-    await superRareAuctionHouseInstance.createColdieAuction(
+    await intangibleAuctionHouseInstance.createColdieAuction(
       intangibleNftInstance.address,
       1,
       convertToWei(1),
@@ -100,7 +100,7 @@ describe("SuperRareAuctionHouse Contract", function () {
     requiredCost = convertFromWei(requiredCost);
     requiredCost = parseFloat(requiredCost);
 
-    await superRareAuctionHouseInstance.bid(
+    await intangibleAuctionHouseInstance.bid(
       address,
       tokenId,
       convertToWei(bidAmount),
@@ -111,7 +111,7 @@ describe("SuperRareAuctionHouse Contract", function () {
   describe("Testing functions", async function () {
     it("Should not create coldie auction due to non-approval contract", async function () {
       await truffleAssert.reverts(
-        superRareAuctionHouseInstance.createColdieAuction(
+        intangibleAuctionHouseInstance.createColdieAuction(
           intangibleNftInstance.address,
           1,
           convertToWei(1),
@@ -125,7 +125,7 @@ describe("SuperRareAuctionHouse Contract", function () {
     it("Should create coldie auction", async function () {
       await setApprovalAndCreateColdieAuction();
 
-      const auctionDetails = await superRareAuctionHouseInstance.getAuctionDetails(
+      const auctionDetails = await intangibleAuctionHouseInstance.getAuctionDetails(
         intangibleNftInstance.address,
         1
       );
@@ -135,7 +135,7 @@ describe("SuperRareAuctionHouse Contract", function () {
     });
 
     it("Should cancel auction", async function () {
-      await superRareAuctionHouseInstance.cancelAuction(
+      await intangibleAuctionHouseInstance.cancelAuction(
         intangibleNftInstance.address,
         1,
         { from: artist }
@@ -156,7 +156,7 @@ describe("SuperRareAuctionHouse Contract", function () {
 
       await bid(intangibleNftInstance.address, 1, bidAmount);
 
-      const currentBid = await superRareAuctionHouseInstance.getCurrentBid(
+      const currentBid = await intangibleAuctionHouseInstance.getCurrentBid(
         intangibleNftInstance.address,
         1
       );
@@ -167,13 +167,13 @@ describe("SuperRareAuctionHouse Contract", function () {
 
     it("Should settle auction", async function () {
       await marketplaceSettingsInstance.grantMarketplaceAccess(
-        superRareAuctionHouseInstance.address,
+        intangibleAuctionHouseInstance.address,
         {
           from: owner,
         }
       );
 
-      await superRareAuctionHouseInstance.settleAuction(
+      await intangibleAuctionHouseInstance.settleAuction(
         intangibleNftInstance.address,
         1,
         { from: artist }
@@ -187,7 +187,7 @@ describe("SuperRareAuctionHouse Contract", function () {
     it("Should create scheduled auction", async function () {
       const blockNumber = await web3.eth.getBlockNumber();
 
-      await superRareAuctionHouseInstance.createScheduledAuction(
+      await intangibleAuctionHouseInstance.createScheduledAuction(
         intangibleNftInstance.address,
         2,
         convertToWei(1),

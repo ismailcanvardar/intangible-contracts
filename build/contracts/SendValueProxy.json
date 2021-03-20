@@ -19,39 +19,39 @@
   "bytecode": "0x608060405234801561001057600080fd5b5060fe8061001f6000396000f3fe6080604052600436106039576000357c0100000000000000000000000000000000000000000000000000000000900480637d286e4814603e575b600080fd5b607d60048036036020811015605257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050607f565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801560c4573d6000803e3d6000fd5b505056fea26469706673582212209c65a154c6772049e4db694667a1e294a94eeea80e3b01a69ad07b916d4cb36764736f6c634300060c0033",
   "deployedBytecode": "0x6080604052600436106039576000357c0100000000000000000000000000000000000000000000000000000000900480637d286e4814603e575b600080fd5b607d60048036036020811015605257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050607f565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801560c4573d6000803e3d6000fd5b505056fea26469706673582212209c65a154c6772049e4db694667a1e294a94eeea80e3b01a69ad07b916d4cb36764736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "158:408:12:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "158:408:12:-:0;;;;;;;;;;;;;;;;;;;;;;314:250;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;534:3;:12;;:23;547:9;534:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;314:250;:::o",
+  "sourceMap": "158:408:15:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "158:408:15:-:0;;;;;;;;;;;;;;;;;;;;;;314:250;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;534:3;:12;;:23;547:9;534:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;314:250;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.6.12;\n\nimport \"./ISendValueProxy.sol\";\n\n/**\n * @dev Contract that attempts to send value to an address.\n */\ncontract SendValueProxy is ISendValueProxy {\n    /**\n     * @dev Send some wei to the address.\n     * @param _to address to send some value to.\n     */\n    function sendValue(address payable _to) external override payable {\n        // Note that `<address>.transfer` limits gas sent to receiver. It may\n        // not support complex contract operations in the future.\n        _to.transfer(msg.value);\n    }\n}\n",
   "sourcePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/SendValueProxy.sol",
   "ast": {
     "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/SendValueProxy.sol",
     "exportedSymbols": {
       "SendValueProxy": [
-        1126
+        4074
       ]
     },
-    "id": 1127,
+    "id": 4075,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1106,
+        "id": 4054,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:12"
+        "src": "32:23:15"
       },
       {
         "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/ISendValueProxy.sol",
         "file": "./ISendValueProxy.sol",
-        "id": 1107,
+        "id": 4055,
         "nodeType": "ImportDirective",
-        "scope": 1127,
+        "scope": 4075,
         "sourceUnit": 63,
-        "src": "57:31:12",
+        "src": "57:31:15",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -62,19 +62,19 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1109,
+              "id": 4057,
               "name": "ISendValueProxy",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 62,
-              "src": "185:15:12",
+              "src": "185:15:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_ISendValueProxy_$62",
                 "typeString": "contract ISendValueProxy"
               }
             },
-            "id": 1110,
+            "id": 4058,
             "nodeType": "InheritanceSpecifier",
-            "src": "185:15:12"
+            "src": "185:15:15"
           }
         ],
         "contractDependencies": [
@@ -82,15 +82,15 @@
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 1108,
+          "id": 4056,
           "nodeType": "StructuredDocumentation",
-          "src": "90:67:12",
+          "src": "90:67:15",
           "text": " @dev Contract that attempts to send value to an address."
         },
         "fullyImplemented": true,
-        "id": 1126,
+        "id": 4074,
         "linearizedBaseContracts": [
-          1126,
+          4074,
           62
         ],
         "name": "SendValueProxy",
@@ -101,9 +101,9 @@
               61
             ],
             "body": {
-              "id": 1124,
+              "id": 4072,
               "nodeType": "Block",
-              "src": "380:184:12",
+              "src": "380:184:15",
               "statements": [
                 {
                   "expression": {
@@ -113,18 +113,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 1120,
+                          "id": 4068,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "547:3:12",
+                          "src": "547:3:15",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 1121,
+                        "id": 4069,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -132,7 +132,7 @@
                         "memberName": "value",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "547:9:12",
+                        "src": "547:9:15",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -148,18 +148,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1117,
+                        "id": 4065,
                         "name": "_to",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1113,
-                        "src": "534:3:12",
+                        "referencedDeclaration": 4061,
+                        "src": "534:3:15",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
                         }
                       },
-                      "id": 1119,
+                      "id": 4067,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -167,13 +167,13 @@
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "534:12:12",
+                      "src": "534:12:15",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 1122,
+                    "id": 4070,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -181,51 +181,51 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "534:23:12",
+                    "src": "534:23:15",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1123,
+                  "id": 4071,
                   "nodeType": "ExpressionStatement",
-                  "src": "534:23:12"
+                  "src": "534:23:15"
                 }
               ]
             },
             "documentation": {
-              "id": 1111,
+              "id": 4059,
               "nodeType": "StructuredDocumentation",
-              "src": "207:102:12",
+              "src": "207:102:15",
               "text": " @dev Send some wei to the address.\n @param _to address to send some value to."
             },
             "functionSelector": "7d286e48",
-            "id": 1125,
+            "id": 4073,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "sendValue",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 1115,
+              "id": 4063,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "363:8:12"
+              "src": "363:8:15"
             },
             "parameters": {
-              "id": 1114,
+              "id": 4062,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1113,
+                  "id": 4061,
                   "mutability": "mutable",
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1125,
-                  "src": "333:19:12",
+                  "scope": 4073,
+                  "src": "333:19:15",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -233,10 +233,10 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 1112,
+                    "id": 4060,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "333:15:12",
+                    "src": "333:15:15",
                     "stateMutability": "payable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address_payable",
@@ -247,33 +247,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "332:21:12"
+              "src": "332:21:15"
             },
             "returnParameters": {
-              "id": 1116,
+              "id": 4064,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "380:0:12"
+              "src": "380:0:15"
             },
-            "scope": 1126,
-            "src": "314:250:12",
+            "scope": 4074,
+            "src": "314:250:15",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1127,
-        "src": "158:408:12"
+        "scope": 4075,
+        "src": "158:408:15"
       }
     ],
-    "src": "32:535:12"
+    "src": "32:535:15"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/SendValueProxy.sol",
       "exportedSymbols": {
         "SendValueProxy": [
-          1126
+          4074
         ]
       },
       "license": "MIT"
@@ -287,24 +287,24 @@
             ".12"
           ]
         },
-        "id": 1106,
+        "id": 4054,
         "name": "PragmaDirective",
-        "src": "32:23:12"
+        "src": "32:23:15"
       },
       {
         "attributes": {
           "SourceUnit": 63,
           "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/ISendValueProxy.sol",
           "file": "./ISendValueProxy.sol",
-          "scope": 1127,
+          "scope": 4075,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 1107,
+        "id": 4055,
         "name": "ImportDirective",
-        "src": "57:31:12"
+        "src": "57:31:15"
       },
       {
         "attributes": {
@@ -315,20 +315,20 @@
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1126,
+            4074,
             62
           ],
           "name": "SendValueProxy",
-          "scope": 1127
+          "scope": 4075
         },
         "children": [
           {
             "attributes": {
               "text": " @dev Contract that attempts to send value to an address."
             },
-            "id": 1108,
+            "id": 4056,
             "name": "StructuredDocumentation",
-            "src": "90:67:12"
+            "src": "90:67:15"
           },
           {
             "attributes": {
@@ -342,14 +342,14 @@
                   "referencedDeclaration": 62,
                   "type": "contract ISendValueProxy"
                 },
-                "id": 1109,
+                "id": 4057,
                 "name": "UserDefinedTypeName",
-                "src": "185:15:12"
+                "src": "185:15:15"
               }
             ],
-            "id": 1110,
+            "id": 4058,
             "name": "InheritanceSpecifier",
-            "src": "185:15:12"
+            "src": "185:15:15"
           },
           {
             "attributes": {
@@ -364,7 +364,7 @@
                 null
               ],
               "name": "sendValue",
-              "scope": 1126,
+              "scope": 4074,
               "stateMutability": "payable",
               "virtual": false,
               "visibility": "external"
@@ -374,9 +374,9 @@
                 "attributes": {
                   "text": " @dev Send some wei to the address.\n @param _to address to send some value to."
                 },
-                "id": 1111,
+                "id": 4059,
                 "name": "StructuredDocumentation",
-                "src": "207:102:12"
+                "src": "207:102:15"
               },
               {
                 "attributes": {
@@ -384,9 +384,9 @@
                     null
                   ]
                 },
-                "id": 1115,
+                "id": 4063,
                 "name": "OverrideSpecifier",
-                "src": "363:8:12"
+                "src": "363:8:15"
               },
               {
                 "children": [
@@ -396,7 +396,7 @@
                       "mutability": "mutable",
                       "name": "_to",
                       "overrides": null,
-                      "scope": 1125,
+                      "scope": 4073,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address payable",
@@ -410,19 +410,19 @@
                           "stateMutability": "payable",
                           "type": "address payable"
                         },
-                        "id": 1112,
+                        "id": 4060,
                         "name": "ElementaryTypeName",
-                        "src": "333:15:12"
+                        "src": "333:15:15"
                       }
                     ],
-                    "id": 1113,
+                    "id": 4061,
                     "name": "VariableDeclaration",
-                    "src": "333:19:12"
+                    "src": "333:19:15"
                   }
                 ],
-                "id": 1114,
+                "id": 4062,
                 "name": "ParameterList",
-                "src": "332:21:12"
+                "src": "332:21:15"
               },
               {
                 "attributes": {
@@ -431,9 +431,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1116,
+                "id": 4064,
                 "name": "ParameterList",
-                "src": "380:0:12"
+                "src": "380:0:15"
               },
               {
                 "children": [
@@ -478,18 +478,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1113,
+                                  "referencedDeclaration": 4061,
                                   "type": "address payable",
                                   "value": "_to"
                                 },
-                                "id": 1117,
+                                "id": 4065,
                                 "name": "Identifier",
-                                "src": "534:3:12"
+                                "src": "534:3:15"
                               }
                             ],
-                            "id": 1119,
+                            "id": 4067,
                             "name": "MemberAccess",
-                            "src": "534:12:12"
+                            "src": "534:12:15"
                           },
                           {
                             "attributes": {
@@ -513,44 +513,44 @@
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 1120,
+                                "id": 4068,
                                 "name": "Identifier",
-                                "src": "547:3:12"
+                                "src": "547:3:15"
                               }
                             ],
-                            "id": 1121,
+                            "id": 4069,
                             "name": "MemberAccess",
-                            "src": "547:9:12"
+                            "src": "547:9:15"
                           }
                         ],
-                        "id": 1122,
+                        "id": 4070,
                         "name": "FunctionCall",
-                        "src": "534:23:12"
+                        "src": "534:23:15"
                       }
                     ],
-                    "id": 1123,
+                    "id": 4071,
                     "name": "ExpressionStatement",
-                    "src": "534:23:12"
+                    "src": "534:23:15"
                   }
                 ],
-                "id": 1124,
+                "id": 4072,
                 "name": "Block",
-                "src": "380:184:12"
+                "src": "380:184:15"
               }
             ],
-            "id": 1125,
+            "id": 4073,
             "name": "FunctionDefinition",
-            "src": "314:250:12"
+            "src": "314:250:15"
           }
         ],
-        "id": 1126,
+        "id": 4074,
         "name": "ContractDefinition",
-        "src": "158:408:12"
+        "src": "158:408:15"
       }
     ],
-    "id": 1127,
+    "id": 4075,
     "name": "SourceUnit",
-    "src": "32:535:12"
+    "src": "32:535:15"
   },
   "compiler": {
     "name": "solc",
@@ -558,7 +558,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-13T15:15:39.709Z",
+  "updatedAt": "2021-03-20T12:34:07.795Z",
   "devdoc": {
     "details": "Contract that attempts to send value to an address.",
     "kind": "dev",

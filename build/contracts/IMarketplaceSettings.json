@@ -162,22 +162,22 @@
     "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/Marketplace/IMarketplaceSettings.sol",
     "exportedSymbols": {
       "IMarketplaceSettings": [
-        329
+        3277
       ]
     },
-    "id": 330,
+    "id": 3278,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 263,
+        "id": 3211,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:6"
+        "src": "32:23:9"
       },
       {
         "abstract": false,
@@ -185,15 +185,15 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 264,
+          "id": 3212,
           "nodeType": "StructuredDocumentation",
-          "src": "57:72:6",
+          "src": "57:72:9",
           "text": " @title IMarketplaceSettings Settings governing a marketplace."
         },
         "fullyImplemented": false,
-        "id": 329,
+        "id": 3277,
         "linearizedBaseContracts": [
-          329
+          3277
         ],
         "name": "IMarketplaceSettings",
         "nodeType": "ContractDefinition",
@@ -201,13 +201,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 265,
+              "id": 3213,
               "nodeType": "StructuredDocumentation",
-              "src": "361:108:6",
+              "src": "361:108:9",
               "text": " @dev Get the max value to be used with the marketplace.\n @return uint256 wei value."
             },
             "functionSelector": "f9a23e86",
-            "id": 270,
+            "id": 3218,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -215,24 +215,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 266,
+              "id": 3214,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "505:2:6"
+              "src": "505:2:9"
             },
             "returnParameters": {
-              "id": 269,
+              "id": 3217,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 268,
+                  "id": 3216,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 270,
-                  "src": "531:7:6",
+                  "scope": 3218,
+                  "src": "531:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -240,10 +240,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 267,
+                    "id": 3215,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "531:7:6",
+                    "src": "531:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -253,10 +253,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "530:9:6"
+              "src": "530:9:9"
             },
-            "scope": 329,
-            "src": "474:66:6",
+            "scope": 3277,
+            "src": "474:66:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -264,13 +264,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 271,
+              "id": 3219,
               "nodeType": "StructuredDocumentation",
-              "src": "546:108:6",
+              "src": "546:108:9",
               "text": " @dev Get the max value to be used with the marketplace.\n @return uint256 wei value."
             },
             "functionSelector": "5c1b40f1",
-            "id": 276,
+            "id": 3224,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -278,24 +278,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 272,
+              "id": 3220,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "690:2:6"
+              "src": "690:2:9"
             },
             "returnParameters": {
-              "id": 275,
+              "id": 3223,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 274,
+                  "id": 3222,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 276,
-                  "src": "716:7:6",
+                  "scope": 3224,
+                  "src": "716:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -303,10 +303,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 273,
+                    "id": 3221,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "716:7:6",
+                    "src": "716:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -316,10 +316,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "715:9:6"
+              "src": "715:9:9"
             },
-            "scope": 329,
-            "src": "659:66:6",
+            "scope": 3277,
+            "src": "659:66:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -327,13 +327,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 277,
+              "id": 3225,
               "nodeType": "StructuredDocumentation",
-              "src": "910:89:6",
+              "src": "910:89:9",
               "text": " @dev Get the marketplace fee percentage.\n @return uint8 wei fee."
             },
             "functionSelector": "83475921",
-            "id": 282,
+            "id": 3230,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -341,24 +341,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 278,
+              "id": 3226,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1040:2:6"
+              "src": "1040:2:9"
             },
             "returnParameters": {
-              "id": 281,
+              "id": 3229,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 280,
+                  "id": 3228,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 282,
-                  "src": "1066:5:6",
+                  "scope": 3230,
+                  "src": "1066:5:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -366,10 +366,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 279,
+                    "id": 3227,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1066:5:6",
+                    "src": "1066:5:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -379,10 +379,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1065:7:6"
+              "src": "1065:7:9"
             },
-            "scope": 329,
-            "src": "1004:69:6",
+            "scope": 3277,
+            "src": "1004:69:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -390,13 +390,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 283,
+              "id": 3231,
               "nodeType": "StructuredDocumentation",
-              "src": "1079:175:6",
+              "src": "1079:175:9",
               "text": " @dev Utility function for calculating the marketplace fee for given amount of wei.\n @param _amount uint256 wei amount.\n @return uint256 wei fee."
             },
             "functionSelector": "c3fc4952",
-            "id": 290,
+            "id": 3238,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -404,18 +404,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 286,
+              "id": 3234,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 285,
+                  "id": 3233,
                   "mutability": "mutable",
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 290,
-                  "src": "1292:15:6",
+                  "scope": 3238,
+                  "src": "1292:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -423,10 +423,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 284,
+                    "id": 3232,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1292:7:6",
+                    "src": "1292:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -436,21 +436,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1291:17:6"
+              "src": "1291:17:9"
             },
             "returnParameters": {
-              "id": 289,
+              "id": 3237,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 288,
+                  "id": 3236,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 290,
-                  "src": "1356:7:6",
+                  "scope": 3238,
+                  "src": "1356:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -458,10 +458,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 287,
+                    "id": 3235,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1356:7:6",
+                    "src": "1356:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -471,10 +471,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1355:9:6"
+              "src": "1355:9:9"
             },
-            "scope": 329,
-            "src": "1259:106:6",
+            "scope": 3277,
+            "src": "1259:106:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -482,13 +482,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 291,
+              "id": 3239,
               "nodeType": "StructuredDocumentation",
-              "src": "1551:197:6",
+              "src": "1551:197:9",
               "text": " @dev Get the primary sale fee percentage for a specific ERC721 contract.\n @param _contractAddress address ERC721Contract address.\n @return uint8 wei primary sale fee."
             },
             "functionSelector": "b28a7bad",
-            "id": 298,
+            "id": 3246,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -496,18 +496,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 294,
+              "id": 3242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 293,
+                  "id": 3241,
                   "mutability": "mutable",
                   "name": "_contractAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 298,
-                  "src": "1804:24:6",
+                  "scope": 3246,
+                  "src": "1804:24:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -515,10 +515,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 292,
+                    "id": 3240,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1804:7:6",
+                    "src": "1804:7:9",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -529,21 +529,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1803:26:6"
+              "src": "1803:26:9"
             },
             "returnParameters": {
-              "id": 297,
+              "id": 3245,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 296,
+                  "id": 3244,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 298,
-                  "src": "1877:5:6",
+                  "scope": 3246,
+                  "src": "1877:5:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -551,10 +551,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 295,
+                    "id": 3243,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1877:5:6",
+                    "src": "1877:5:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -564,10 +564,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1876:7:6"
+              "src": "1876:7:9"
             },
-            "scope": 329,
-            "src": "1753:131:6",
+            "scope": 3277,
+            "src": "1753:131:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -575,13 +575,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 299,
+              "id": 3247,
               "nodeType": "StructuredDocumentation",
-              "src": "1890:238:6",
+              "src": "1890:238:9",
               "text": " @dev Utility function for calculating the primary sale fee for given amount of wei\n @param _contractAddress address ERC721Contract address.\n @param _amount uint256 wei amount.\n @return uint256 wei fee."
             },
             "functionSelector": "6357f1ac",
-            "id": 308,
+            "id": 3256,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -589,18 +589,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 304,
+              "id": 3252,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 301,
+                  "id": 3249,
                   "mutability": "mutable",
                   "name": "_contractAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 308,
-                  "src": "2166:24:6",
+                  "scope": 3256,
+                  "src": "2166:24:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -608,10 +608,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 300,
+                    "id": 3248,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2166:7:6",
+                    "src": "2166:7:9",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -623,13 +623,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 303,
+                  "id": 3251,
                   "mutability": "mutable",
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 308,
-                  "src": "2192:15:6",
+                  "scope": 3256,
+                  "src": "2192:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -637,10 +637,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 302,
+                    "id": 3250,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2192:7:6",
+                    "src": "2192:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -650,21 +650,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2165:43:6"
+              "src": "2165:43:9"
             },
             "returnParameters": {
-              "id": 307,
+              "id": 3255,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 306,
+                  "id": 3254,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 308,
-                  "src": "2256:7:6",
+                  "scope": 3256,
+                  "src": "2256:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -672,10 +672,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 305,
+                    "id": 3253,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2256:7:6",
+                    "src": "2256:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -685,10 +685,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2255:9:6"
+              "src": "2255:9:9"
             },
-            "scope": 329,
-            "src": "2133:132:6",
+            "scope": 3277,
+            "src": "2133:132:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -696,13 +696,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 309,
+              "id": 3257,
               "nodeType": "StructuredDocumentation",
-              "src": "2271:233:6",
+              "src": "2271:233:9",
               "text": " @dev Check whether the ERC721 token has sold at least once.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @return bool of whether the token has sold."
             },
             "functionSelector": "511bc84c",
-            "id": 318,
+            "id": 3266,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -710,18 +710,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 314,
+              "id": 3262,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 311,
+                  "id": 3259,
                   "mutability": "mutable",
                   "name": "_contractAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 318,
-                  "src": "2537:24:6",
+                  "scope": 3266,
+                  "src": "2537:24:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -729,10 +729,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 310,
+                    "id": 3258,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2537:7:6",
+                    "src": "2537:7:9",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -744,13 +744,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 313,
+                  "id": 3261,
                   "mutability": "mutable",
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 318,
-                  "src": "2563:16:6",
+                  "scope": 3266,
+                  "src": "2563:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -758,10 +758,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 312,
+                    "id": 3260,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2563:7:6",
+                    "src": "2563:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -771,21 +771,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2536:44:6"
+              "src": "2536:44:9"
             },
             "returnParameters": {
-              "id": 317,
+              "id": 3265,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 316,
+                  "id": 3264,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 318,
-                  "src": "2628:4:6",
+                  "scope": 3266,
+                  "src": "2628:4:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -793,10 +793,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 315,
+                    "id": 3263,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2628:4:6",
+                    "src": "2628:4:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -806,10 +806,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2627:6:6"
+              "src": "2627:6:9"
             },
-            "scope": 329,
-            "src": "2509:125:6",
+            "scope": 3277,
+            "src": "2509:125:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -817,13 +817,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 319,
+              "id": 3267,
               "nodeType": "StructuredDocumentation",
-              "src": "2640:314:6",
+              "src": "2640:314:9",
               "text": " @dev Mark a token as sold.\n Requirements:\n - `_contractAddress` cannot be the zero address.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @param _hasSold bool of whether the token should be marked sold or not."
             },
             "functionSelector": "5a3c652d",
-            "id": 328,
+            "id": 3276,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -831,18 +831,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 326,
+              "id": 3274,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 321,
+                  "id": 3269,
                   "mutability": "mutable",
                   "name": "_contractAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 328,
-                  "src": "2993:24:6",
+                  "scope": 3276,
+                  "src": "2993:24:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -850,10 +850,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 320,
+                    "id": 3268,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2993:7:6",
+                    "src": "2993:7:9",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -865,13 +865,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 323,
+                  "id": 3271,
                   "mutability": "mutable",
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 328,
-                  "src": "3027:16:6",
+                  "scope": 3276,
+                  "src": "3027:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -879,10 +879,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 322,
+                    "id": 3270,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3027:7:6",
+                    "src": "3027:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -893,13 +893,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 325,
+                  "id": 3273,
                   "mutability": "mutable",
                   "name": "_hasSold",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 328,
-                  "src": "3053:13:6",
+                  "scope": 3276,
+                  "src": "3053:13:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -907,10 +907,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 324,
+                    "id": 3272,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3053:4:6",
+                    "src": "3053:4:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -920,33 +920,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2983:89:6"
+              "src": "2983:89:9"
             },
             "returnParameters": {
-              "id": 327,
+              "id": 3275,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3081:0:6"
+              "src": "3081:0:9"
             },
-            "scope": 329,
-            "src": "2959:123:6",
+            "scope": 3277,
+            "src": "2959:123:9",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 330,
-        "src": "130:2954:6"
+        "scope": 3278,
+        "src": "130:2954:9"
       }
     ],
-    "src": "32:3053:6"
+    "src": "32:3053:9"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/Users/ismailcanvardar/Documents/freelance-works/intangible-contracts/contracts/Marketplace/IMarketplaceSettings.sol",
       "exportedSymbols": {
         "IMarketplaceSettings": [
-          329
+          3277
         ]
       },
       "license": "MIT"
@@ -960,9 +960,9 @@
             ".12"
           ]
         },
-        "id": 263,
+        "id": 3211,
         "name": "PragmaDirective",
-        "src": "32:23:6"
+        "src": "32:23:9"
       },
       {
         "attributes": {
@@ -976,19 +976,19 @@
           "contractKind": "interface",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            329
+            3277
           ],
           "name": "IMarketplaceSettings",
-          "scope": 330
+          "scope": 3278
         },
         "children": [
           {
             "attributes": {
               "text": " @title IMarketplaceSettings Settings governing a marketplace."
             },
-            "id": 264,
+            "id": 3212,
             "name": "StructuredDocumentation",
-            "src": "57:72:6"
+            "src": "57:72:9"
           },
           {
             "attributes": {
@@ -1002,7 +1002,7 @@
               ],
               "name": "getMarketplaceMaxValue",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1012,9 +1012,9 @@
                 "attributes": {
                   "text": " @dev Get the max value to be used with the marketplace.\n @return uint256 wei value."
                 },
-                "id": 265,
+                "id": 3213,
                 "name": "StructuredDocumentation",
-                "src": "361:108:6"
+                "src": "361:108:9"
               },
               {
                 "attributes": {
@@ -1023,9 +1023,9 @@
                   ]
                 },
                 "children": [],
-                "id": 266,
+                "id": 3214,
                 "name": "ParameterList",
-                "src": "505:2:6"
+                "src": "505:2:9"
               },
               {
                 "children": [
@@ -1035,7 +1035,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 270,
+                      "scope": 3218,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1048,24 +1048,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 267,
+                        "id": 3215,
                         "name": "ElementaryTypeName",
-                        "src": "531:7:6"
+                        "src": "531:7:9"
                       }
                     ],
-                    "id": 268,
+                    "id": 3216,
                     "name": "VariableDeclaration",
-                    "src": "531:7:6"
+                    "src": "531:7:9"
                   }
                 ],
-                "id": 269,
+                "id": 3217,
                 "name": "ParameterList",
-                "src": "530:9:6"
+                "src": "530:9:9"
               }
             ],
-            "id": 270,
+            "id": 3218,
             "name": "FunctionDefinition",
-            "src": "474:66:6"
+            "src": "474:66:9"
           },
           {
             "attributes": {
@@ -1079,7 +1079,7 @@
               ],
               "name": "getMarketplaceMinValue",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1089,9 +1089,9 @@
                 "attributes": {
                   "text": " @dev Get the max value to be used with the marketplace.\n @return uint256 wei value."
                 },
-                "id": 271,
+                "id": 3219,
                 "name": "StructuredDocumentation",
-                "src": "546:108:6"
+                "src": "546:108:9"
               },
               {
                 "attributes": {
@@ -1100,9 +1100,9 @@
                   ]
                 },
                 "children": [],
-                "id": 272,
+                "id": 3220,
                 "name": "ParameterList",
-                "src": "690:2:6"
+                "src": "690:2:9"
               },
               {
                 "children": [
@@ -1112,7 +1112,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 276,
+                      "scope": 3224,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1125,24 +1125,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 273,
+                        "id": 3221,
                         "name": "ElementaryTypeName",
-                        "src": "716:7:6"
+                        "src": "716:7:9"
                       }
                     ],
-                    "id": 274,
+                    "id": 3222,
                     "name": "VariableDeclaration",
-                    "src": "716:7:6"
+                    "src": "716:7:9"
                   }
                 ],
-                "id": 275,
+                "id": 3223,
                 "name": "ParameterList",
-                "src": "715:9:6"
+                "src": "715:9:9"
               }
             ],
-            "id": 276,
+            "id": 3224,
             "name": "FunctionDefinition",
-            "src": "659:66:6"
+            "src": "659:66:9"
           },
           {
             "attributes": {
@@ -1156,7 +1156,7 @@
               ],
               "name": "getMarketplaceFeePercentage",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1166,9 +1166,9 @@
                 "attributes": {
                   "text": " @dev Get the marketplace fee percentage.\n @return uint8 wei fee."
                 },
-                "id": 277,
+                "id": 3225,
                 "name": "StructuredDocumentation",
-                "src": "910:89:6"
+                "src": "910:89:9"
               },
               {
                 "attributes": {
@@ -1177,9 +1177,9 @@
                   ]
                 },
                 "children": [],
-                "id": 278,
+                "id": 3226,
                 "name": "ParameterList",
-                "src": "1040:2:6"
+                "src": "1040:2:9"
               },
               {
                 "children": [
@@ -1189,7 +1189,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 282,
+                      "scope": 3230,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -1202,24 +1202,24 @@
                           "name": "uint8",
                           "type": "uint8"
                         },
-                        "id": 279,
+                        "id": 3227,
                         "name": "ElementaryTypeName",
-                        "src": "1066:5:6"
+                        "src": "1066:5:9"
                       }
                     ],
-                    "id": 280,
+                    "id": 3228,
                     "name": "VariableDeclaration",
-                    "src": "1066:5:6"
+                    "src": "1066:5:9"
                   }
                 ],
-                "id": 281,
+                "id": 3229,
                 "name": "ParameterList",
-                "src": "1065:7:6"
+                "src": "1065:7:9"
               }
             ],
-            "id": 282,
+            "id": 3230,
             "name": "FunctionDefinition",
-            "src": "1004:69:6"
+            "src": "1004:69:9"
           },
           {
             "attributes": {
@@ -1233,7 +1233,7 @@
               ],
               "name": "calculateMarketplaceFee",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1243,9 +1243,9 @@
                 "attributes": {
                   "text": " @dev Utility function for calculating the marketplace fee for given amount of wei.\n @param _amount uint256 wei amount.\n @return uint256 wei fee."
                 },
-                "id": 283,
+                "id": 3231,
                 "name": "StructuredDocumentation",
-                "src": "1079:175:6"
+                "src": "1079:175:9"
               },
               {
                 "children": [
@@ -1255,7 +1255,7 @@
                       "mutability": "mutable",
                       "name": "_amount",
                       "overrides": null,
-                      "scope": 290,
+                      "scope": 3238,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1268,19 +1268,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 284,
+                        "id": 3232,
                         "name": "ElementaryTypeName",
-                        "src": "1292:7:6"
+                        "src": "1292:7:9"
                       }
                     ],
-                    "id": 285,
+                    "id": 3233,
                     "name": "VariableDeclaration",
-                    "src": "1292:15:6"
+                    "src": "1292:15:9"
                   }
                 ],
-                "id": 286,
+                "id": 3234,
                 "name": "ParameterList",
-                "src": "1291:17:6"
+                "src": "1291:17:9"
               },
               {
                 "children": [
@@ -1290,7 +1290,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 290,
+                      "scope": 3238,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1303,24 +1303,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 287,
+                        "id": 3235,
                         "name": "ElementaryTypeName",
-                        "src": "1356:7:6"
+                        "src": "1356:7:9"
                       }
                     ],
-                    "id": 288,
+                    "id": 3236,
                     "name": "VariableDeclaration",
-                    "src": "1356:7:6"
+                    "src": "1356:7:9"
                   }
                 ],
-                "id": 289,
+                "id": 3237,
                 "name": "ParameterList",
-                "src": "1355:9:6"
+                "src": "1355:9:9"
               }
             ],
-            "id": 290,
+            "id": 3238,
             "name": "FunctionDefinition",
-            "src": "1259:106:6"
+            "src": "1259:106:9"
           },
           {
             "attributes": {
@@ -1334,7 +1334,7 @@
               ],
               "name": "getERC721ContractPrimarySaleFeePercentage",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1344,9 +1344,9 @@
                 "attributes": {
                   "text": " @dev Get the primary sale fee percentage for a specific ERC721 contract.\n @param _contractAddress address ERC721Contract address.\n @return uint8 wei primary sale fee."
                 },
-                "id": 291,
+                "id": 3239,
                 "name": "StructuredDocumentation",
-                "src": "1551:197:6"
+                "src": "1551:197:9"
               },
               {
                 "children": [
@@ -1356,7 +1356,7 @@
                       "mutability": "mutable",
                       "name": "_contractAddress",
                       "overrides": null,
-                      "scope": 298,
+                      "scope": 3246,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1370,19 +1370,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 292,
+                        "id": 3240,
                         "name": "ElementaryTypeName",
-                        "src": "1804:7:6"
+                        "src": "1804:7:9"
                       }
                     ],
-                    "id": 293,
+                    "id": 3241,
                     "name": "VariableDeclaration",
-                    "src": "1804:24:6"
+                    "src": "1804:24:9"
                   }
                 ],
-                "id": 294,
+                "id": 3242,
                 "name": "ParameterList",
-                "src": "1803:26:6"
+                "src": "1803:26:9"
               },
               {
                 "children": [
@@ -1392,7 +1392,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 298,
+                      "scope": 3246,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -1405,24 +1405,24 @@
                           "name": "uint8",
                           "type": "uint8"
                         },
-                        "id": 295,
+                        "id": 3243,
                         "name": "ElementaryTypeName",
-                        "src": "1877:5:6"
+                        "src": "1877:5:9"
                       }
                     ],
-                    "id": 296,
+                    "id": 3244,
                     "name": "VariableDeclaration",
-                    "src": "1877:5:6"
+                    "src": "1877:5:9"
                   }
                 ],
-                "id": 297,
+                "id": 3245,
                 "name": "ParameterList",
-                "src": "1876:7:6"
+                "src": "1876:7:9"
               }
             ],
-            "id": 298,
+            "id": 3246,
             "name": "FunctionDefinition",
-            "src": "1753:131:6"
+            "src": "1753:131:9"
           },
           {
             "attributes": {
@@ -1436,7 +1436,7 @@
               ],
               "name": "calculatePrimarySaleFee",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1446,9 +1446,9 @@
                 "attributes": {
                   "text": " @dev Utility function for calculating the primary sale fee for given amount of wei\n @param _contractAddress address ERC721Contract address.\n @param _amount uint256 wei amount.\n @return uint256 wei fee."
                 },
-                "id": 299,
+                "id": 3247,
                 "name": "StructuredDocumentation",
-                "src": "1890:238:6"
+                "src": "1890:238:9"
               },
               {
                 "children": [
@@ -1458,7 +1458,7 @@
                       "mutability": "mutable",
                       "name": "_contractAddress",
                       "overrides": null,
-                      "scope": 308,
+                      "scope": 3256,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1472,14 +1472,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 300,
+                        "id": 3248,
                         "name": "ElementaryTypeName",
-                        "src": "2166:7:6"
+                        "src": "2166:7:9"
                       }
                     ],
-                    "id": 301,
+                    "id": 3249,
                     "name": "VariableDeclaration",
-                    "src": "2166:24:6"
+                    "src": "2166:24:9"
                   },
                   {
                     "attributes": {
@@ -1487,7 +1487,7 @@
                       "mutability": "mutable",
                       "name": "_amount",
                       "overrides": null,
-                      "scope": 308,
+                      "scope": 3256,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1500,19 +1500,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 302,
+                        "id": 3250,
                         "name": "ElementaryTypeName",
-                        "src": "2192:7:6"
+                        "src": "2192:7:9"
                       }
                     ],
-                    "id": 303,
+                    "id": 3251,
                     "name": "VariableDeclaration",
-                    "src": "2192:15:6"
+                    "src": "2192:15:9"
                   }
                 ],
-                "id": 304,
+                "id": 3252,
                 "name": "ParameterList",
-                "src": "2165:43:6"
+                "src": "2165:43:9"
               },
               {
                 "children": [
@@ -1522,7 +1522,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 308,
+                      "scope": 3256,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1535,24 +1535,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 305,
+                        "id": 3253,
                         "name": "ElementaryTypeName",
-                        "src": "2256:7:6"
+                        "src": "2256:7:9"
                       }
                     ],
-                    "id": 306,
+                    "id": 3254,
                     "name": "VariableDeclaration",
-                    "src": "2256:7:6"
+                    "src": "2256:7:9"
                   }
                 ],
-                "id": 307,
+                "id": 3255,
                 "name": "ParameterList",
-                "src": "2255:9:6"
+                "src": "2255:9:9"
               }
             ],
-            "id": 308,
+            "id": 3256,
             "name": "FunctionDefinition",
-            "src": "2133:132:6"
+            "src": "2133:132:9"
           },
           {
             "attributes": {
@@ -1566,7 +1566,7 @@
               ],
               "name": "hasERC721TokenSold",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -1576,9 +1576,9 @@
                 "attributes": {
                   "text": " @dev Check whether the ERC721 token has sold at least once.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @return bool of whether the token has sold."
                 },
-                "id": 309,
+                "id": 3257,
                 "name": "StructuredDocumentation",
-                "src": "2271:233:6"
+                "src": "2271:233:9"
               },
               {
                 "children": [
@@ -1588,7 +1588,7 @@
                       "mutability": "mutable",
                       "name": "_contractAddress",
                       "overrides": null,
-                      "scope": 318,
+                      "scope": 3266,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1602,14 +1602,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 310,
+                        "id": 3258,
                         "name": "ElementaryTypeName",
-                        "src": "2537:7:6"
+                        "src": "2537:7:9"
                       }
                     ],
-                    "id": 311,
+                    "id": 3259,
                     "name": "VariableDeclaration",
-                    "src": "2537:24:6"
+                    "src": "2537:24:9"
                   },
                   {
                     "attributes": {
@@ -1617,7 +1617,7 @@
                       "mutability": "mutable",
                       "name": "_tokenId",
                       "overrides": null,
-                      "scope": 318,
+                      "scope": 3266,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1630,19 +1630,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 312,
+                        "id": 3260,
                         "name": "ElementaryTypeName",
-                        "src": "2563:7:6"
+                        "src": "2563:7:9"
                       }
                     ],
-                    "id": 313,
+                    "id": 3261,
                     "name": "VariableDeclaration",
-                    "src": "2563:16:6"
+                    "src": "2563:16:9"
                   }
                 ],
-                "id": 314,
+                "id": 3262,
                 "name": "ParameterList",
-                "src": "2536:44:6"
+                "src": "2536:44:9"
               },
               {
                 "children": [
@@ -1652,7 +1652,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 318,
+                      "scope": 3266,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -1665,24 +1665,24 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 315,
+                        "id": 3263,
                         "name": "ElementaryTypeName",
-                        "src": "2628:4:6"
+                        "src": "2628:4:9"
                       }
                     ],
-                    "id": 316,
+                    "id": 3264,
                     "name": "VariableDeclaration",
-                    "src": "2628:4:6"
+                    "src": "2628:4:9"
                   }
                 ],
-                "id": 317,
+                "id": 3265,
                 "name": "ParameterList",
-                "src": "2627:6:6"
+                "src": "2627:6:9"
               }
             ],
-            "id": 318,
+            "id": 3266,
             "name": "FunctionDefinition",
-            "src": "2509:125:6"
+            "src": "2509:125:9"
           },
           {
             "attributes": {
@@ -1696,7 +1696,7 @@
               ],
               "name": "markERC721Token",
               "overrides": null,
-              "scope": 329,
+              "scope": 3277,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -1706,9 +1706,9 @@
                 "attributes": {
                   "text": " @dev Mark a token as sold.\n Requirements:\n - `_contractAddress` cannot be the zero address.\n @param _contractAddress address ERC721Contract address.\n @param _tokenId uint256 token ID.\n @param _hasSold bool of whether the token should be marked sold or not."
                 },
-                "id": 319,
+                "id": 3267,
                 "name": "StructuredDocumentation",
-                "src": "2640:314:6"
+                "src": "2640:314:9"
               },
               {
                 "children": [
@@ -1718,7 +1718,7 @@
                       "mutability": "mutable",
                       "name": "_contractAddress",
                       "overrides": null,
-                      "scope": 328,
+                      "scope": 3276,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1732,14 +1732,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 320,
+                        "id": 3268,
                         "name": "ElementaryTypeName",
-                        "src": "2993:7:6"
+                        "src": "2993:7:9"
                       }
                     ],
-                    "id": 321,
+                    "id": 3269,
                     "name": "VariableDeclaration",
-                    "src": "2993:24:6"
+                    "src": "2993:24:9"
                   },
                   {
                     "attributes": {
@@ -1747,7 +1747,7 @@
                       "mutability": "mutable",
                       "name": "_tokenId",
                       "overrides": null,
-                      "scope": 328,
+                      "scope": 3276,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1760,14 +1760,14 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 322,
+                        "id": 3270,
                         "name": "ElementaryTypeName",
-                        "src": "3027:7:6"
+                        "src": "3027:7:9"
                       }
                     ],
-                    "id": 323,
+                    "id": 3271,
                     "name": "VariableDeclaration",
-                    "src": "3027:16:6"
+                    "src": "3027:16:9"
                   },
                   {
                     "attributes": {
@@ -1775,7 +1775,7 @@
                       "mutability": "mutable",
                       "name": "_hasSold",
                       "overrides": null,
-                      "scope": 328,
+                      "scope": 3276,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -1788,19 +1788,19 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 324,
+                        "id": 3272,
                         "name": "ElementaryTypeName",
-                        "src": "3053:4:6"
+                        "src": "3053:4:9"
                       }
                     ],
-                    "id": 325,
+                    "id": 3273,
                     "name": "VariableDeclaration",
-                    "src": "3053:13:6"
+                    "src": "3053:13:9"
                   }
                 ],
-                "id": 326,
+                "id": 3274,
                 "name": "ParameterList",
-                "src": "2983:89:6"
+                "src": "2983:89:9"
               },
               {
                 "attributes": {
@@ -1809,24 +1809,24 @@
                   ]
                 },
                 "children": [],
-                "id": 327,
+                "id": 3275,
                 "name": "ParameterList",
-                "src": "3081:0:6"
+                "src": "3081:0:9"
               }
             ],
-            "id": 328,
+            "id": 3276,
             "name": "FunctionDefinition",
-            "src": "2959:123:6"
+            "src": "2959:123:9"
           }
         ],
-        "id": 329,
+        "id": 3277,
         "name": "ContractDefinition",
-        "src": "130:2954:6"
+        "src": "130:2954:9"
       }
     ],
-    "id": 330,
+    "id": 3278,
     "name": "SourceUnit",
-    "src": "32:3053:6"
+    "src": "32:3053:9"
   },
   "compiler": {
     "name": "solc",
@@ -1834,7 +1834,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-13T15:15:39.698Z",
+  "updatedAt": "2021-03-20T12:34:07.784Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

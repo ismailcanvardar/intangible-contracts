@@ -9,7 +9,7 @@ import "./IERC721Creator.sol";
 /**
  * @title IERC721 Non-Fungible Token Creator basic interface
  */
-contract SuperRareTokenCreatorRegistry is Ownable, IERC721TokenCreator {
+contract IntangibleTokenCreatorRegistry is Ownable, IERC721TokenCreator {
     using SafeMath for uint256;
 
     /////////////////////////////////////////////////////////////////////////

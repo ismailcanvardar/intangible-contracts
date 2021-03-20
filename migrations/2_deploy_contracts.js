@@ -1,14 +1,18 @@
 const IntangibleNFT = artifacts.require("IntangibleNFT");
 const MarketplaceSettings = artifacts.require("MarketplaceSettings");
 // _iMarketSettings, _iERC721CreatorRoyalty
-const SuperRareAuctionHouse = artifacts.require("SuperRareAuctionHouse");
+const IntangibleAuctionHouse = artifacts.require("IntangibleAuctionHouse");
 // _iMarketSettings, _iERC721CreatorRoyalty
-const SuperRareMarketAuctionV2 = artifacts.require("SuperRareMarketAuctionV2");
+const IntangibleMarketAuctionV2 = artifacts.require(
+  "IntangibleMarketAuctionV2"
+);
 // _iERC721CreatorRoyalty
-const SuperRareRoyaltyRegistry = artifacts.require("SuperRareRoyaltyRegistry");
+const IntangibleRoyaltyRegistery = artifacts.require(
+  "IntangibleRoyaltyRegistry"
+);
 // _iERC721Creators
-const SuperRareTokenCreatorRegistry = artifacts.require(
-  "SuperRareTokenCreatorRegistry"
+const IntangibleTokenCreatorRegistry = artifacts.require(
+  "IntangibleTokenCreatorRegistry"
 );
 
 module.exports = function (deployer) {
@@ -18,28 +22,28 @@ module.exports = function (deployer) {
       return deployer.deploy(MarketplaceSettings);
     })
     .then(() => {
-      return deployer.deploy(SuperRareTokenCreatorRegistry, [
+      return deployer.deploy(IntangibleTokenCreatorRegistry, [
         IntangibleNFT.address,
       ]);
     })
     .then(() => {
       return deployer.deploy(
-        SuperRareRoyaltyRegistry,
-        SuperRareTokenCreatorRegistry.address
+        IntangibleRoyaltyRegistery,
+        IntangibleTokenCreatorRegistry.address
       );
     })
     .then(() => {
       return deployer.deploy(
-        SuperRareAuctionHouse,
+        IntangibleAuctionHouse,
         MarketplaceSettings.address,
-        SuperRareRoyaltyRegistry.address
+        IntangibleRoyaltyRegistery.address
       );
     })
     .then(() => {
       deployer.deploy(
-        SuperRareMarketAuctionV2,
+        IntangibleMarketAuctionV2,
         MarketplaceSettings.address,
-        SuperRareRoyaltyRegistry.address
+        IntangibleRoyaltyRegistery.address
       );
     });
 };

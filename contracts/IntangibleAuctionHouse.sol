@@ -8,7 +8,7 @@ import "./IERC721CreatorRoyalty.sol";
 import "./Marketplace/IMarketplaceSettings.sol";
 import "./Payments.sol";
 
-contract SuperRareAuctionHouse is Ownable, Payments {
+contract IntangibleAuctionHouse is Ownable, Payments {
     using SafeMath for uint256;
 
     /////////////////////////////////////////////////////////////////////////

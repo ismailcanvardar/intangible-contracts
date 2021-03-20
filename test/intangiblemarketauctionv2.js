@@ -1,24 +1,24 @@
 const IntangibleNFT = artifacts.require("IntangibleNFT");
 const MarketplaceSettings = artifacts.require("MarketplaceSettings");
 // _iMarketSettings, _iERC721CreatorRoyalty
-const SuperRareMarketAuctionV2 = artifacts.require("SuperRareMarketAuctionV2");
+const IntangibleMarketAuctionV2 = artifacts.require("IntangibleMarketAuctionV2");
 // _iERC721CreatorRoyalty
-const SuperRareRoyaltyRegistry = artifacts.require("SuperRareRoyaltyRegistry");
+const IntangibleRoyaltyRegistry = artifacts.require("IntangibleRoyaltyRegistry");
 // _iERC721Creators
-const SuperRareTokenCreatorRegistry = artifacts.require(
-  "SuperRareTokenCreatorRegistry"
+const IntangibleTokenCreatorRegistry = artifacts.require(
+  "IntangibleTokenCreatorRegistry"
 );
 const truffleAssert = require("truffle-assertions");
 
-describe("SuperRareMarketAuctionV2 Contract", function () {
+describe("IntangibleMarketAuctionV2 Contract", function () {
   let owner;
   let artist;
   let collector;
   let intangibleNftInstance;
   let marketplaceSettingsInstance;
-  let superRareTokenCreatorRegistryInstance;
-  let superRareRoyaltyRegisteryInstance;
-  let superRareMarketAuctionV2;
+  let intangibleTokenCreatorRegistryInstance;
+  let intangibleRoyaltyRegisteryInstance;
+  let intangibleMarketAuctionV2;
 
   before(async function () {
     [owner, artist, collector] = await web3.eth.getAccounts();
@@ -26,17 +26,17 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
     marketplaceSettingsInstance = await MarketplaceSettings.new({
       from: owner,
     });
-    superRareTokenCreatorRegistryInstance = await SuperRareTokenCreatorRegistry.new(
+    intangibleTokenCreatorRegistryInstance = await IntangibleTokenCreatorRegistry.new(
       [intangibleNftInstance.address],
       { from: owner }
     );
-    superRareRoyaltyRegisteryInstance = await SuperRareRoyaltyRegistry.new(
-      superRareTokenCreatorRegistryInstance.address,
+    intangibleRoyaltyRegisteryInstance = await IntangibleRoyaltyRegistry.new(
+      intangibleTokenCreatorRegistryInstance.address,
       { from: owner }
     );
-    superRareMarketAuctionV2 = await SuperRareMarketAuctionV2.new(
+    intangibleMarketAuctionV2 = await IntangibleMarketAuctionV2.new(
       marketplaceSettingsInstance.address,
-      superRareRoyaltyRegisteryInstance.address,
+      intangibleRoyaltyRegisteryInstance.address,
       { from: owner }
     );
     await intangibleNftInstance.addToWhitelist(artist, { from: owner });
@@ -65,7 +65,7 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
       }
     );
     await marketplaceSettingsInstance.grantMarketplaceAccess(
-      superRareMarketAuctionV2.address,
+      intangibleMarketAuctionV2.address,
       {
         from: owner,
       }
@@ -85,12 +85,12 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
   // amount => price for nft token
   const approveAllAndSetSalePrice = async (callerAddress, amount, tokenId) => {
     await intangibleNftInstance.setApprovalForAll(
-      superRareMarketAuctionV2.address,
+      intangibleMarketAuctionV2.address,
       true,
       { from: callerAddress }
     );
 
-    await superRareMarketAuctionV2.setSalePrice(
+    await intangibleMarketAuctionV2.setSalePrice(
       intangibleNftInstance.address,
       tokenId,
       convertToWei(amount),
@@ -104,7 +104,7 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
 
       await approveAllAndSetSalePrice(artist, price, 1);
 
-      const tokenPrice = await superRareMarketAuctionV2.tokenPrice(
+      const tokenPrice = await intangibleMarketAuctionV2.tokenPrice(
         intangibleNftInstance.address,
         price
       );
@@ -117,12 +117,12 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
 
       await approveAllAndSetSalePrice(artist, price, 2);
 
-      const tokenPriceFeeIncluded = await superRareMarketAuctionV2.tokenPriceFeeIncluded(
+      const tokenPriceFeeIncluded = await intangibleMarketAuctionV2.tokenPriceFeeIncluded(
         intangibleNftInstance.address,
         2
       );
 
-      await superRareMarketAuctionV2.safeBuy(
+      await intangibleMarketAuctionV2.safeBuy(
         intangibleNftInstance.address,
         2,
         convertToWei(1),
@@ -144,7 +144,7 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
         convertToWei(token3BidAmount)
       );
 
-      await superRareMarketAuctionV2.bid(
+      await intangibleMarketAuctionV2.bid(
         convertToWei(token3BidAmount),
         intangibleNftInstance.address,
         3,
@@ -159,18 +159,18 @@ describe("SuperRareMarketAuctionV2 Contract", function () {
     });
 
     it("Should cancel bid", async function () {
-      await superRareMarketAuctionV2.cancelBid(
+      await intangibleMarketAuctionV2.cancelBid(
         intangibleNftInstance.address,
         3,
         { from: collector }
       );
 
-      const bidDetails = await superRareMarketAuctionV2.currentBidDetailsOfToken(
+      const bidDetails = await intangibleMarketAuctionV2.currentBidDetailsOfToken(
         intangibleNftInstance.address,
         3
       );
 
-      assert.equal(bidDetails["1"], web3.utils.toHex("0"));
+      assert.equal(bidDetails["1"], "0x0000000000000000000000000000000000000000");
     });
   });
 });
